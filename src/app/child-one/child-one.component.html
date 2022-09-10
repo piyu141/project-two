@@ -1,0 +1,40 @@
+
+
+<h1>{{firstname}} {{lastname}}</h1>
+<img src="{{myImg}}" alt="">
+<h1 [innerHTML]="contact"></h1>
+<h1 [innerText]="lastname"></h1>
+<h1 [textContent]="firstname"></h1>
+
+<img [src]="myImg" alt="">
+<h2>{{ismarried ? "john is married" : "john is happy" }}</h2>
+<h1>{{printhello()}}</h1>
+<p>{{stdObj | json}}</p>
+<p>{{stdObj.fname}}</p>
+
+<span>{{stdArr | json}}</span>
+<ul>
+    <li>{{stdArr[0]}}</li>
+    <li>{{stdArr[1]}}</li>
+    <li>{{stdArr[2]}}</li>
+    <li>{{stdArr[3]}}</li>
+</ul>
+<ul>
+    <li *ngFor="let std of stdArr; index as i">{{std}} ({{i}})</li>
+</ul>
+<button class="btn btn-sm btn-primary" *ngIf="showBtn">Submit</button>
+
+<p *ngIf="stdArr.length !== 0; else elsepart">there are several students in Ea-16</p>
+<ng-template #elsepart>
+    <p>there is no students</p>
+</ng-template>
+
+<h3 [ngStyle]="{background :showRed? 'red' : 'blue', color : '#fff'}">Hello world</h3>
+<h5 [ngClass]="{'strike-through' : true}">Hello Angular</h5>
+
+<input type="text" inputFormat>
+
+<!-- directive
+1. Structural directive >>> *ngFor ,*ngIf
+2. Attribute directive
+3. Custom directive -->
